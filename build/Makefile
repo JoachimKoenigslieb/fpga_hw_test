@@ -1,14 +1,14 @@
-SRC_DIR := /home/joachimk/fpga_hw_test/src
+SRC_DIR := ../src
 KERNEL_DIR := ${SRC_DIR}/kernels
 OBJ_DIR := ./objects
 TARGET := hw_emu
-PLATFORM := xilinx_u200_xdma_201830_2
+PLATFORM := xilinx_u250_xdma_201830_2
 
-KERNEL_INCLUDES := -I/tools/Xilinx/Vivado/2020.1/include/ -I${SRC_DIR}/xcl2/
+KERNEL_INCLUDES := -I/tools/Xilinx/Vivado/2020.1/include/
 
-HOST_INCLUDES := -I/opt/xilinx/xrt/include/ -I/tools/Xilinx/Vivado/2020.1/include/ -I/${SRC_DIR}/includes/
+HOST_INCLUDES := -I/opt/xilinx/xrt/include/ -I/tools/Xilinx/Vivado/2020.1/include/ -I${SRC_DIR}/includes/
 
-HOST_LIBS  := -L/opt/xilinx/xrt/lib/ -L/usr/local/lib -L/usr/lib -L${SRC_DIR}/xtl/ -lOpenCL -lz -lpthread -lrt -lstdc++ -std=c++14 -w -O0 -g 
+HOST_LIBS  := -L/opt/xilinx/xrt/lib/ -L/usr/local/lib -L/usr/lib -lOpenCL -lz -lpthread -lrt -lstdc++ -std=c++14 -w -O0 -g 
 
 SOURCES := $(wildcard ${KERNEL_DIR}/*.cpp)
 OBJECTS := $(patsubst %.cpp,%.xo,$(addprefix $(TARGET)_objects/,$(notdir $(SOURCES))))
