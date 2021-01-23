@@ -8,7 +8,7 @@
 #include "xtensor/xnpy.hpp"
 #include "xtensor/xio.hpp"
 
-#include "xcl2.cpp"
+#include "xcl2/xcl2.cpp"
 
 #define X 6
 #define Y 6
