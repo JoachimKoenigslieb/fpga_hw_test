@@ -6,17 +6,13 @@
 #include <iostream>
 #include "xtensor/xarray.hpp"
 #include "xtensor/xnpy.hpp"
-#include "xtensor/xview.hpp"
 #include "xtensor/xio.hpp"
-#include "xtensor/xadapt.hpp"
 
 #include "xcl2.cpp"
 
 #define X 6
 #define Y 6
 #define Z 4
-
-using namespace xt::placeholders; //enables xt::range(1, _) syntax. eqiv. to [1:] syntax in numpy 
 
 // Memory alignment
 template <typename T>

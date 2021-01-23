@@ -5,9 +5,11 @@ TARGET := sw_emu
 PLATFORM := xilinx_u200_xdma_201830_2
 
 KERNEL_INCLUDES := -I/tools/Xilinx/Vivado/2020.1/include/ -I${SRC_DIR}/xcl2/
-HOST_INCLUDES := -I/opt/xilinx/xrt/include/ -I/tools/Xilinx/Vivado/2020.1/include/ -I${SRC_DIR}/xcl2/
 
-HOST_LIBS  := -L/opt/xilinx/xrt/lib/ -L/usr/local/lib -L/usr/lib -lOpenCL -lz -lpthread -lrt -lstdc++ -std=c++14 -w -O0 -g
+
+HOST_INCLUDES := -I/opt/xilinx/xrt/include/ -I/tools/Xilinx/Vivado/2020.1/include/ -I${SRC_DIR}/xcl2/ -I${SRC_DIR}/xtensor/
+
+HOST_LIBS  := -L/opt/xilinx/xrt/lib/ -L/usr/local/lib -L/usr/lib  -lOpenCL -lz -lpthread -lrt -lstdc++ -std=c++14 -w -O0 -g
 
 SOURCES := $(wildcard ${KERNEL_DIR}/*.cpp)
 OBJECTS := $(patsubst %.cpp,%.xo,$(addprefix $(TARGET)_objects/,$(notdir $(SOURCES))))
