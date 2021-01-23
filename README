@@ -1,6 +1,8 @@
 
-Compile should just be "make all" (this creates host, .xclbin according to TARGET and PLATFORM variable in Makefile and emconfig.json with emconfigutil) inside the build directory.
+Compile should just be "make all" (this creates host, .xclbin according to TARGET and PLATFORM (Currently NOT set!) variable in Makefile and emconfig.json with emconfigutil) inside the build directory.
 
 Running is then "./host -xclbin hw_kernels.xclbin" file.
 
 I have tested this in sw_emu localy, in hw_emu on threadripper. 
+
+Note: It complains about unaligned host pointers, but should only affect speed as I understand 
