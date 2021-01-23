@@ -1,0 +1,13 @@
+*.log
+*.xo
+*.xclbin*
+*compile_summary
+**/_x/
+**/.run/
+**/.Xil/
+*settings*
+host
+**/dump
+*.vscode
+**/.ipcache/
+*emconfig.json
